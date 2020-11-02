@@ -4,30 +4,8 @@ class Pokemon extends Component {
     constructor() {
         super()
         this.state = {
-            isSelected: "Select",
+            isAlive: true
         }
-    }
-
-    clickSelectButton() {
-        if (this.state.isSelected == "Select") {
-            this.select()
-        } else {
-            this.unSelect()
-        }
-    }
-
-    select() {
-        this.setState({
-            isSelected: "Selected"
-            //TODO: change the total number selected
-        })
-    }
-
-    unSelect() {
-        this.setState({
-            isSelected: "Select"
-            //TODO: change the total number selected
-        })
     }
 
     render() {
@@ -39,13 +17,17 @@ class Pokemon extends Component {
                 //TODO: add type
                 }
                 <img
-                src = {"https://pokeres.bastionbot.org/images/pokemon/" + this.props.id + ".png"}
-                alt = "new"
-                width = "200"
-                height = "200"
+                src = {
+                    this.state.isAlive?
+                    "https://pokeres.bastionbot.org/images/pokemon/" + this.props.id + ".png"
+                    :null
+                }
+                alt = "This pokemon is dead"
+                width = "130"
+                height = "130"
                 />
                 {this.props.children}
-                <button onClick = {() => this.props.click()}>{this.state.isSelected}</button>
+                <button onClick = {() => this.props.click()}>{this.props.isSelected}</button>
             </div>
         )
     }

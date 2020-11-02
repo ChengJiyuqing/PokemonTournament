@@ -10,7 +10,6 @@ class App extends Component {
       <div className = "App">
         <Greeting></Greeting>
         <PokemonList></PokemonList>
-        <button>Begin Fight!</button>
       </div>
     );
   }
