@@ -1,6 +1,6 @@
 class TypeTable {
     constructor() {
-        const typeTable = [
+        this.typeTable = [
             [[], [5, 7, 8]],
             [[0, 5, 8, 14, 17], [2, 3, 13, 6, 7, 16]],
             [[1, 6, 11], [5, 8, 12]],
@@ -21,7 +21,8 @@ class TypeTable {
             [[7, 13], [1, 17, 16]]
         ]
     }
-
+    
+    
     getTypeId(type) {
         switch(type) {
             case "normal": return 0
@@ -64,5 +65,25 @@ class TypeTable {
 
     }
 
+    /*
+     * Return is type1 weakened when it encounters type2
+     */
+    isWeakened(type1, type2) {
+        const type1Id = this.getTypeId(type1);
+        const type2Id = this.getTypeId(type2);
+        console.log(type1Id, type2Id)
+        console.log(this.typeTable)
+        return this.typeTable[type1Id][1].includes(type2Id);
+    }
 
+    /*
+     * Return is type1 strengthened when it encounters type2
+     */
+    isStrengthened(type1, type2) {
+        const type1Id = this.getTypeId(type1)
+        const type2Id = this.getTypeId(type2)
+        return this.typeTable[type1Id][0].includes(type2Id)
+    }
 }
+
+export default TypeTable
