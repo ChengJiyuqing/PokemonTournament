@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting Started with Pokemon Tournament
 
 ## Available Scripts
 
@@ -25,3 +23,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### How to use
+Select two pokemons of your choice, click begin fight. If there is a draw, you can move on to choose two different pokemons.
+
+* note: the sequence of who fights whom first may affect the final outcome of tournament.
