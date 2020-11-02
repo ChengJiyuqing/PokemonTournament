@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Component } from 'react';
-import PokemonList from './component/PokemonList';
+import PokemonList from './PokemonList';
 import Axios from 'axios';
-import Pokemon from './component/Pokemon';
-import Greeting from './component/Greeting'
+import Pokemon from './Pokemon';
+import Greeting from './Greeting'
 
 class App extends Component {
   render() {
